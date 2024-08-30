@@ -1,0 +1,49 @@
+\documentclass[11pt,a4paper,parskip=half]{scrreprt} % Use scrreprt class for KOMA-Script
+
+\input{preamble}
+
+\begin{document}
+\pagenumbering{roman}
+
+\include{templates/titlepage}
+\include{sections/acknowledgments}
+\include{sections/abstract}
+\include{sections/ConfidentialityClause}
+\include{sections/affidavit}
+
+% Acronyms
+
+\include{sections/acronyms}
+
+\printnomenclature
+% Table of Contents, List of Figures, List of Tables
+\include{sections/toc}
+\include{sections/lof}
+\include{sections/lot}
+
+\pagenumbering{arabic}
+% Include the chapters
+\include{chapters/introduction}
+\include{chapters/literature_review}
+\include{chapters/methodology}
+\include{chapters/implementation_traditional_cv}
+\include{chapters/results_traditional_cv}
+\include{chapters/implementation_modern_cv}
+\include{chapters/results_comparison}
+%\include{chapters/localization}
+\include{chapters/discussion}
+\include{chapters/conclusion}
+\include{chapters/bibliography}
+
+
+% Appendices
+\include{chapters/appendices}
+\begin{comment}
+    % Bibliography
+\bibliographystyle{ieeetr}
+\bibliography{bibliography}comment
+\end{comment}
+
+
+
+\end{document}

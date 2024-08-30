@@ -1,0 +1,99 @@
+
+\usepackage[T1]{fontenc} % Use T1 encoding
+\usepackage[utf8]{inputenc} % Ensure UTF-8 encoding
+\usepackage{lmodern} % Use Latin Modern fonts, which support T1 encoding
+\usepackage{tabularx}
+\usepackage{hyperref}
+\usepackage{acronym}
+% Define the THI blue color
+\usepackage{graphicx}
+\usepackage{comment}
+\usepackage{float}
+\usepackage{nomencl}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\definecolor{haw_mag}{rgb}{0,0.112,0.47}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{scrhack} 
+\usepackage{enumitem}
+\usepackage{adjustbox}
+\usepackage{subcaption}
+\usepackage{caption}
+
+\DeclareUnicodeCharacter{0307}{\.}
+\DeclareCaptionFormat{nocite}{#1#2\csname ifx@\endcsname #3\relax}
+\captionsetup{format=nocite}
+%\usepackage{parskip}
+%\usepackage[export]{adjustbox}
+\usepackage{listings}
+\usepackage{xcolor}
+
+
+% Set section and subsection font styles and colours using KOMA-Script commands
+\begin{comment}
+\setkomafont{section}{\color{haw_mag}\rmfamily\scshape}
+\addtokomafont{chapter}{\color{haw_mag}\rmfamily}
+\addtokomafont{subsection}{\color{haw_mag}\rmfamily}
+\addtokomafont{subsubsection}{\color{haw_mag}\rmfamily}
+\addtokomafont{paragraph}{\color{haw_mag}\rmfamily}
+\addtokomafont{subparagraph}{\rmfamily}
+\end{comment}
+\addtokomafont{chapter}{\color{haw_mag}\rmfamily}
+\setkomafont{section}{\color{haw_mag}\rmfamily\scshape\Large}
+\setkomafont{subsection}{\color{haw_mag}\rmfamily\scshape\large}
+\setkomafont{subsubsection}{\color{haw_mag}\rmfamily\normalsize}
+\setkomafont{paragraph}{\color{haw_mag}\rmfamily\normalsize}
+\setkomafont{subparagraph}{\rmfamily\normalsize}
+
+
+% Include the geometry package with adjusted margins
+\usepackage[a4paper,top=25mm,bottom=25mm,left=30mm,right=20mm]{geometry}
+
+% Include other common packages and settings
+\usepackage{scrlayer-scrpage}
+\pagestyle{scrheadings}
+%\clearscrheadfoot
+\clearpairofpagestyles
+\ohead{\pagemark}
+\ihead{\Ifthispageodd{\leftmark}{\rightmark}}
+\KOMAoptions{headsepline=0.4pt, footsepline=0.4pt}
+\setkomafont{pagehead}{\scshape}
+
+\setkomafont{pagefoot}{\scshape}
+\ifoot{\footnotesize{VISWA GANDAMALLA}}
+\ofoot{\footnotesize{Master thesis}}		
+%\defpagestyle{myPageStyle}{...}
+
+\usepackage[style=ieee, maxnames=3, minnames=1]{biblatex}
+\addbibresource{bibliography.bib}
+\DeclareSourcemap{
+  \maps[datatype=bibtex]{
+    \map{
+      \step[fieldsource=doi, final]
+      \step[fieldset=url, null]
+    }
+  }
+}
+
+\lstset{ 
+  language=Python,                  % the language of the code
+  basicstyle=\ttfamily\footnotesize, % the size of the fonts that are used for the code
+  keywordstyle=\color{blue},        % keywords in blue
+  stringstyle=\color{red},          % strings in red
+  commentstyle=\color{green},       % comments in green
+  numbers=left,                     % line numbers on the left
+  numberstyle=\tiny\color{gray},    % line numbers in gray
+  stepnumber=1,                     % the step between two line numbers
+  numbersep=5pt,                    % how far the line numbers are from the code
+  backgroundcolor=\color{lightgray}, % choose the background color
+  frame=single,                     % adds a frame around the code
+  rulecolor=\color{black},          % if not set, the frame-color may be changed on line-breaks within not-black text
+  breaklines=true,                  % automatic line breaking
+  breakatwhitespace=true,           % breaks lines at whitespace
+  tabsize=4,                        % sets default tabsize to 4 spaces
+  captionpos=b,                     % sets the caption-position to bottom
+  title=\lstname                    % show the filename of files included with \lstinputlisting; also try caption instead of title
+}
+
+\newcommand{\autor}{Viswa Gandamalla}
